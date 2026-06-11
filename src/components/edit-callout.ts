@@ -32,3 +32,12 @@ export function renderResolutionCallout(
     </div>
   `;
 }
+
+export function renderWhyCallout(body: string): string {
+  return html`
+    <div class="why-callout">
+      <div class="title">Why it fired</div>
+      <div>${body}</div>
+    </div>
+  `;
+}

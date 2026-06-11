@@ -61,6 +61,14 @@ export interface WalkthroughStep {
   render: () => string;
 }
 
+export interface WorkedExample {
+  title: string;
+  claim: Claim;
+  edit: EditHit;
+  whyCaught: string; // explanation; may contain inline HTML (<code>…</code>)
+  resolution: string; // may contain inline HTML
+}
+
 export interface Explainer {
   slug: string;
   title: string;
@@ -71,6 +79,13 @@ export interface Explainer {
   whenItFires: string[];
   keyReferences: string[];
   edgeCases: string[];
+  ruleData?: {
+    intro: string; // how CMS publishes/structures this rule data
+    tableHtml: string; // raw HTML — the CMS file excerpt (reuses .ncci-table-preview)
+    traceHtml: string; // raw HTML — the lookup-trace visual
+    note?: string; // optional footnote
+  };
+  workedExamples?: WorkedExample[];
   miniExample: {
     summary: string;
     claim?: Claim;

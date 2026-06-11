@@ -897,6 +897,126 @@ main.page {
   font-style: italic;
 }
 
+/* ---------- MAI badges (MUE) ---------- */
+
+.mai-1 {
+  background: var(--ok-soft);
+  color: var(--ok);
+  border: 1px solid var(--ok);
+}
+
+.mai-2 {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.mai-3 {
+  background: var(--warn-soft);
+  color: var(--warn);
+  border: 1px solid var(--warn);
+}
+
+/* ---------- rule lookup trace ---------- */
+
+.rule-trace {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.trace-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.trace-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.trace-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.trace-box.trace-mono {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.trace-muted {
+  color: var(--ink-faint);
+}
+
+.trace-arrow {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  padding-left: 0.2rem;
+}
+
+.trace-verdict {
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  border-left: 4px solid transparent;
+}
+
+.verdict-deny {
+  background: var(--danger-soft);
+  border-left-color: var(--danger);
+  color: var(--ink);
+}
+
+.verdict-pay {
+  background: var(--ok-soft);
+  border-left-color: var(--ok);
+  color: var(--ink);
+}
+
+.verdict-tag {
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.74rem;
+  margin-right: 0.4rem;
+}
+
+.verdict-deny .verdict-tag {
+  color: var(--danger);
+}
+
+.verdict-pay .verdict-tag {
+  color: var(--ok);
+}
+
+/* ---------- "why it fired" callout ---------- */
+
+.why-callout {
+  border-left: 4px solid var(--warn);
+  background: var(--warn-soft);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+}
+.why-callout .title {
+  font-weight: 600;
+  color: var(--warn);
+  margin-bottom: 0.35rem;
+}
+
 /* ---------- source citations ---------- */
 
 .sources {
