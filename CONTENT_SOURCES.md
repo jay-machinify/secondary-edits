@@ -10,6 +10,11 @@ All domain content in this training UI is drawn from publicly available, authori
 - **CMS Medicare Claims Processing Manual, Chapter 23 (claim editing)** — https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/downloads/clm104c23.pdf
 - **CMS Medicare Coverage Determination Process (LCD / NCD)** — https://www.cms.gov/medicare/coverage/determination-process
 - **CMS LCD database** — https://www.cms.gov/medicare/coverage/determination-process/local
+- **Social Security Act §1862 (statutory "reasonable and necessary" basis)** — https://www.ssa.gov/OP_Home/ssact/title18/1862.htm
+- **AMA CPT (Current Procedural Terminology)** — https://www.ama-assn.org/practice-management/cpt
+- **CDC / NCHS ICD-10-CM** — https://www.cdc.gov/nchs/icd/icd-10-cm/index.html
+- **X12 / Washington Publishing — CARC / RARC code lists** — https://x12.org/codes
+- **21st Century Cures Act (Pub. L. 114-255; LCD process reform)** — https://www.congress.gov/bill/114th-congress/house-bill/34
 
 ## Industry / coding references
 

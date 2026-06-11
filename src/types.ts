@@ -47,7 +47,8 @@ export type EditCategory =
   | "Frequency"
   | "Age / Gender / POS"
   | "Medical Necessity"
-  | "Unbundling";
+  | "Unbundling"
+  | "Rule Sourcing";
 
 export interface Source {
   label: string;
@@ -76,9 +77,13 @@ export interface Explainer {
   oneLiner: string;
   definition: string;
   conceptNote?: string;
-  whenItFires: string[];
-  keyReferences: string[];
-  edgeCases: string[];
+  // Free-form sections (raw HTML body). When present, the renderer shows these
+  // instead of the edit-family lists below — used for meta topics (e.g. rule sourcing)
+  // that don't map onto "when it fires" / claim-based examples.
+  sections?: { heading: string; bodyHtml: string }[];
+  whenItFires?: string[];
+  keyReferences?: string[];
+  edgeCases?: string[];
   ruleData?: {
     intro: string; // how CMS publishes/structures this rule data
     tableHtml: string; // raw HTML — the CMS file excerpt (reuses .ncci-table-preview)
@@ -86,7 +91,7 @@ export interface Explainer {
     note?: string; // optional footnote
   };
   workedExamples?: WorkedExample[];
-  miniExample: {
+  miniExample?: {
     summary: string;
     claim?: Claim;
     edit?: EditHit;

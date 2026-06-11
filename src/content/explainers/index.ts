@@ -8,6 +8,7 @@ import { frequency } from "./frequency.js";
 import { ageGenderPos } from "./age-gender-pos.js";
 import { medicalNecessity } from "./medical-necessity.js";
 import { unbundling } from "./unbundling.js";
+import { ruleSourcing } from "./rule-sourcing.js";
 
 export const explainers: Explainer[] = [
   ncciPtp,
@@ -19,6 +20,7 @@ export const explainers: Explainer[] = [
   ageGenderPos,
   medicalNecessity,
   unbundling,
+  ruleSourcing,
 ];
 
 export function findExplainer(slug: string): Explainer | undefined {

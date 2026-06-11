@@ -72,20 +72,31 @@ export function renderExplainerDetail(slug: string): RouterContext {
         <p>${ex.definition}</p>
         ${ex.conceptNote ?? ""}
 
-        <h2>When it fires</h2>
-        <ul>
-          ${ex.whenItFires.map((w) => `<li>${escapeHtml(w)}</li>`).join("")}
-        </ul>
+        ${ex.sections
+          ? ex.sections
+              .map(
+                (s) => html`
+                  <h2>${escapeHtml(s.heading)}</h2>
+                  ${s.bodyHtml}
+                `,
+              )
+              .join("")
+          : html`
+              <h2>When it fires</h2>
+              <ul>
+                ${(ex.whenItFires ?? []).map((w) => `<li>${escapeHtml(w)}</li>`).join("")}
+              </ul>
 
-        <h2>Key references</h2>
-        <ul>
-          ${ex.keyReferences.map((k) => `<li>${escapeHtml(k)}</li>`).join("")}
-        </ul>
+              <h2>Key references</h2>
+              <ul>
+                ${(ex.keyReferences ?? []).map((k) => `<li>${escapeHtml(k)}</li>`).join("")}
+              </ul>
 
-        <h2>Common edge cases</h2>
-        <ul>
-          ${ex.edgeCases.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}
-        </ul>
+              <h2>Common edge cases</h2>
+              <ul>
+                ${(ex.edgeCases ?? []).map((e) => `<li>${escapeHtml(e)}</li>`).join("")}
+              </ul>
+            `}
 
         ${ex.ruleData
           ? html`
@@ -113,13 +124,15 @@ export function renderExplainerDetail(slug: string): RouterContext {
                 )
                 .join("")}
             `
-          : html`
-              <h2>Mini example</h2>
-              <p>${ex.miniExample.summary}</p>
-              ${ex.miniExample.claim ? renderClaimCard(ex.miniExample.claim) : ""}
-              ${ex.miniExample.edit ? renderEditCallout(ex.miniExample.edit) : ""}
-              ${renderResolutionCallout("Resolution", ex.miniExample.resolution)}
-            `}
+          : ex.miniExample
+            ? html`
+                <h2>Mini example</h2>
+                <p>${ex.miniExample.summary}</p>
+                ${ex.miniExample.claim ? renderClaimCard(ex.miniExample.claim) : ""}
+                ${ex.miniExample.edit ? renderEditCallout(ex.miniExample.edit) : ""}
+                ${renderResolutionCallout("Resolution", ex.miniExample.resolution)}
+              `
+            : ""}
 
         <aside class="sources">
           <h3>Sources</h3>
